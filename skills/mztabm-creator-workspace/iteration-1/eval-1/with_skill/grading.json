@@ -1,0 +1,41 @@
+{
+  "passed": 7,
+  "total": 7,
+  "expectations": [
+    {
+      "text": "output_file_exists",
+      "passed": true,
+      "evidence": "size=859556"
+    },
+    {
+      "text": "in_memory_validation_zero_errors",
+      "passed": true,
+      "evidence": "success=True errors=0 warnings=1"
+    },
+    {
+      "text": "mztab_id_matches RIKEN-LIPIDOMICS-MOUSE-ADRENAL",
+      "passed": true,
+      "evidence": "string search in MTD"
+    },
+    {
+      "text": "contact_email_present knishida@riken.jp",
+      "passed": true,
+      "evidence": "string search"
+    },
+    {
+      "text": "instrument_q_exactive (MS:1002416 or 'Q Exactive HF')",
+      "passed": true,
+      "evidence": "string search"
+    },
+    {
+      "text": "software_msdial_490 ('MS-DIAL' & '4.90')",
+      "passed": true,
+      "evidence": "string search"
+    },
+    {
+      "text": "ms_run_location_template prefixed with file:///riken/",
+      "passed": true,
+      "evidence": "ms_run[*]-location starts with file:///riken/ and ends with .mzML"
+    }
+  ]
+}

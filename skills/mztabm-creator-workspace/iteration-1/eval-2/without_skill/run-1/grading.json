@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "output_file_exists",
+      "passed": true,
+      "evidence": "size=920600"
+    },
+    {
+      "text": "in_memory_validation_zero_errors",
+      "passed": true,
+      "evidence": "success=True errors=0 warnings=1"
+    },
+    {
+      "text": "blank kept: 7 ms_run entries",
+      "passed": true,
+      "evidence": "ms_run count = 7"
+    },
+    {
+      "text": "publication has pubmed:29039908",
+      "passed": true,
+      "evidence": "string search"
+    },
+    {
+      "text": "publication has doi:10.1021/acs.analchem.7b03576",
+      "passed": true,
+      "evidence": "string search"
+    }
+  ]
+}

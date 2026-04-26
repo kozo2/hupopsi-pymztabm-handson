@@ -1,0 +1,2 @@
+Wrote /Users/knishida/skills/mztabm-creator-workspace/iteration-1/eval-2/with_skill/outputs/with_blank.mztab (validation: 0 errors, 1 warnings)
+  WARN:  '$.small_molecule_summary.953.best_id_confidence_value' is recommended.

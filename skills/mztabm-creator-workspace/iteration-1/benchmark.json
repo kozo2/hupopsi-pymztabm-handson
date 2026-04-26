@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "skill_name": "mztabm-creator",
+    "skill_path": "/Users/knishida/skills/mztabm-creator",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-04-26T22:20:16Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 26.3,
+        "tokens": 21247,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists: result.mztab non-empty",
+          "passed": true,
+          "evidence": "size=859217"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=1"
+        },
+        {
+          "text": "MTD section has core fields",
+          "passed": true,
+          "evidence": "checked tokens in MTD section"
+        },
+        {
+          "text": "All three table sections present (SMH/SML/SFH/SMF/SEH/SME)",
+          "passed": true,
+          "evidence": "all 6 section markers seen"
+        },
+        {
+          "text": "ms_run count matches non-Blank samples (default behavior excludes Blank: expect 6)",
+          "passed": true,
+          "evidence": "ms_run count = 6"
+        },
+        {
+          "text": "feature_rows_present: \u2265100 SML rows",
+          "passed": true,
+          "evidence": "SML rows = 1238"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 54.6,
+        "tokens": 25564,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists",
+          "passed": true,
+          "evidence": "size=859556"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=1"
+        },
+        {
+          "text": "mztab_id matches RIKEN-LIPIDOMICS-MOUSE-ADRENAL",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "contact email knishida@riken.jp present",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "instrument is Q Exactive HF (MS:1002416)",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "software MS-DIAL 4.90",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "ms_run location uses file:///riken/{name}.mzML",
+          "passed": true,
+          "evidence": "ms_run[*]-location starts file:///riken/ ends .mzML"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 44.0,
+        "tokens": 24979,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists",
+          "passed": true,
+          "evidence": "size=876033"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=1"
+        },
+        {
+          "text": "blank kept: 7 ms_run entries",
+          "passed": true,
+          "evidence": "ms_run count = 7"
+        },
+        {
+          "text": "publication has pubmed:29039908",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "publication has doi:10.1021/acs.analchem.7b03576",
+          "passed": true,
+          "evidence": "string search"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333333333333334,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 317.9,
+        "tokens": 150662,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists: result.mztab non-empty",
+          "passed": true,
+          "evidence": "size=823857"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=1"
+        },
+        {
+          "text": "MTD section has core fields",
+          "passed": true,
+          "evidence": "checked tokens in MTD section"
+        },
+        {
+          "text": "All three table sections present (SMH/SML/SFH/SMF/SEH/SME)",
+          "passed": true,
+          "evidence": "all 6 section markers seen"
+        },
+        {
+          "text": "ms_run count matches non-Blank samples (default behavior excludes Blank: expect 6)",
+          "passed": false,
+          "evidence": "ms_run count = 7"
+        },
+        {
+          "text": "feature_rows_present: \u2265100 SML rows",
+          "passed": true,
+          "evidence": "SML rows = 1238"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 332.7,
+        "tokens": 100797,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists",
+          "passed": true,
+          "evidence": "size=796257"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=2"
+        },
+        {
+          "text": "mztab_id matches RIKEN-LIPIDOMICS-MOUSE-ADRENAL",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "contact email knishida@riken.jp present",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "instrument is Q Exactive HF (MS:1002416)",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "software MS-DIAL 4.90",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "ms_run location uses file:///riken/{name}.mzML",
+          "passed": true,
+          "evidence": "ms_run[*]-location starts file:///riken/ ends .mzML"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 311.8,
+        "tokens": 98562,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "output_file_exists",
+          "passed": true,
+          "evidence": "size=920600"
+        },
+        {
+          "text": "in_memory_validation_zero_errors",
+          "passed": true,
+          "evidence": "success=True errors=0 warnings=1"
+        },
+        {
+          "text": "blank kept: 7 ms_run entries",
+          "passed": true,
+          "evidence": "ms_run count = 7"
+        },
+        {
+          "text": "publication has pubmed:29039908",
+          "passed": true,
+          "evidence": "string search"
+        },
+        {
+          "text": "publication has doi:10.1021/acs.analchem.7b03576",
+          "passed": true,
+          "evidence": "string search"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 41.6333,
+        "stddev": 14.2977,
+        "min": 26.3,
+        "max": 54.6
+      },
+      "tokens": {
+        "mean": 23930.0,
+        "stddev": 2341.8845,
+        "min": 21247,
+        "max": 25564
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.9444,
+        "stddev": 0.0962,
+        "min": 0.8333,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 320.8,
+        "stddev": 10.7476,
+        "min": 311.8,
+        "max": 332.7
+      },
+      "tokens": {
+        "mean": 116673.6667,
+        "stddev": 29455.9656,
+        "min": 98562,
+        "max": 150662
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.06",
+      "time_seconds": "-279.2",
+      "tokens": "-92744"
+    }
+  },
+  "notes": []
+}

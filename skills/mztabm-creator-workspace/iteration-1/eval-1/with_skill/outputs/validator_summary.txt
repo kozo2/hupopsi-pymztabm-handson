@@ -1,0 +1,1 @@
+Wrote /tmp/eval_runs/eval-1/output/study.mztab (validation: 0 errors, 1 warnings)

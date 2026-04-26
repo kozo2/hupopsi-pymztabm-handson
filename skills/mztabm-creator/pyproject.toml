@@ -1,0 +1,11 @@
+[project]
+name = "mztabm-creator-skill"
+version = "0.0.2"
+description = "Environment for the mztabm-creator skill"
+requires-python = ">=3.10"
+dependencies = [
+    "pymztabm",
+]
+
+[tool.uv.sources]
+pymztabm = { path = "/Users/knishida/Documents/GitHub/pymzTab-m/.claude/worktrees/infallible-cannon-952bb4", editable = true }

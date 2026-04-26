@@ -1,0 +1,31 @@
+{
+  "passed": 5,
+  "total": 5,
+  "expectations": [
+    {
+      "text": "output_file_exists",
+      "passed": true,
+      "evidence": "size=876033"
+    },
+    {
+      "text": "in_memory_validation_zero_errors",
+      "passed": true,
+      "evidence": "success=True errors=0 warnings=1"
+    },
+    {
+      "text": "blank_column_kept: 7 ms_run entries (6 + Blank)",
+      "passed": true,
+      "evidence": "ms_run count = 7"
+    },
+    {
+      "text": "publication_pubmed: 'pubmed:29039908' present",
+      "passed": true,
+      "evidence": "string search"
+    },
+    {
+      "text": "publication_doi: 'doi:10.1021/acs.analchem.7b03576' present",
+      "passed": true,
+      "evidence": "string search"
+    }
+  ]
+}

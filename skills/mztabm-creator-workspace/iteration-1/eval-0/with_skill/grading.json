@@ -1,0 +1,36 @@
+{
+  "passed": 6,
+  "total": 6,
+  "expectations": [
+    {
+      "text": "output_file_exists: result.mztab exists and is non-empty",
+      "passed": true,
+      "evidence": "size=859217"
+    },
+    {
+      "text": "in_memory_validation_zero_errors: validator yields 0 ERROR messages",
+      "passed": true,
+      "evidence": "success=True errors=0 warnings=1"
+    },
+    {
+      "text": "has_metadata_section: MTD lines include mzTab-version, mzTab-ID, ms_run, sample, assay, study_variable, cv, database",
+      "passed": true,
+      "evidence": "checked tokens in MTD section"
+    },
+    {
+      "text": "has_sml_smf_sme_sections: SMH/SML, SFH/SMF, SEH/SME sections present",
+      "passed": true,
+      "evidence": "all 6 section markers seen"
+    },
+    {
+      "text": "ms_run_count_matches_samples: 6 ms_run entries (default behavior excludes Blank)",
+      "passed": true,
+      "evidence": "ms_run count = 6"
+    },
+    {
+      "text": "feature_rows_present: at least 100 SML rows emitted",
+      "passed": true,
+      "evidence": "SML rows = 1238"
+    }
+  ]
+}

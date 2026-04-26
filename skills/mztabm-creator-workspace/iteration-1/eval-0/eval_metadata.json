@@ -1,0 +1,13 @@
+{
+  "eval_id": 0,
+  "eval_name": "minimal-conversion",
+  "prompt": "Convert RIKEN lipidomics TSV pair using defaults; output must pass pymzTab-m validation with 0 ERROR messages.",
+  "assertions": [
+    {"name": "output_file_exists", "description": "Output file /tmp/eval_runs/eval-0/output/result.mztab exists and is a non-empty mzTab-M file"},
+    {"name": "in_memory_validation_zero_errors", "description": "Reading the output file with pymzTab-m read(format='tsv', auto_complete_ids=True) yields zero MessageType.ERROR messages"},
+    {"name": "has_metadata_section", "description": "File contains MTD lines including mzTab-version, mzTab-ID, ms_run, sample, assay, study_variable, cv, database"},
+    {"name": "has_sml_smf_sme_sections", "description": "File contains the SMH/SML, SFH/SMF, and SEH/SME table sections"},
+    {"name": "ms_run_count_matches_samples", "description": "Number of MTD ms_run entries equals number of non-Blank sample columns from the MTD TSV (default behavior excludes blanks: expect 6)"},
+    {"name": "feature_rows_present", "description": "At least 100 SML rows are emitted (the input has ~1237 candidate alignment rows)"}
+  ]
+}

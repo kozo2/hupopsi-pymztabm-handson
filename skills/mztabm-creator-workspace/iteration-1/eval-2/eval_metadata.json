@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "include-blank-with-publication",
+  "prompt": "Convert RIKEN lipidomics TSV pair retaining Blank columns and adding a publication entry (PubMed + DOI).",
+  "assertions": [
+    {"name": "output_file_exists", "description": "Output file /tmp/eval_runs/eval-2/output/with_blank.mztab exists and is non-empty"},
+    {"name": "in_memory_validation_zero_errors", "description": "Re-reading with auto_complete_ids=True yields zero ERROR messages"},
+    {"name": "blank_column_kept", "description": "MTD ms_run section contains 7 entries (6 biological + 1 Blank, since --include-blank was used)"},
+    {"name": "publication_pubmed", "description": "MTD publication[1] line contains 'pubmed:29039908'"},
+    {"name": "publication_doi", "description": "MTD publication[1] line contains 'doi:10.1021/acs.analchem.7b03576'"}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "pass_rate": 0.8333333333333334,
+    "passed": 5,
+    "failed": 1,
+    "total": 6
+  },
+  "expectations": [
+    {
+      "text": "output_file_exists: result.mztab non-empty",
+      "passed": true,
+      "evidence": "size=823857"
+    },
+    {
+      "text": "in_memory_validation_zero_errors",
+      "passed": true,
+      "evidence": "success=True errors=0 warnings=1"
+    },
+    {
+      "text": "MTD section has core fields",
+      "passed": true,
+      "evidence": "checked tokens in MTD section"
+    },
+    {
+      "text": "All three table sections present (SMH/SML/SFH/SMF/SEH/SME)",
+      "passed": true,
+      "evidence": "all 6 section markers seen"
+    },
+    {
+      "text": "ms_run count matches non-Blank samples (default behavior excludes Blank: expect 6)",
+      "passed": false,
+      "evidence": "ms_run count = 7"
+    },
+    {
+      "text": "feature_rows_present: \u2265100 SML rows",
+      "passed": true,
+      "evidence": "SML rows = 1238"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "with-study-metadata",
+  "prompt": "Convert RIKEN lipidomics TSV pair, supplying study-level metadata (mzTab-ID, title, contact, instrument, software, ms_run location, scan polarity).",
+  "assertions": [
+    {"name": "output_file_exists", "description": "Output file /tmp/eval_runs/eval-1/output/study.mztab exists and is non-empty"},
+    {"name": "in_memory_validation_zero_errors", "description": "Re-reading with auto_complete_ids=True yields zero ERROR messages"},
+    {"name": "mztab_id_matches", "description": "MTD mzTab-ID line equals 'RIKEN-LIPIDOMICS-MOUSE-ADRENAL'"},
+    {"name": "contact_email_present", "description": "MTD contact[1]-email line equals 'knishida@riken.jp'"},
+    {"name": "instrument_q_exactive", "description": "MTD instrument[1]-name references Q Exactive HF (cv accession MS:1002416)"},
+    {"name": "software_msdial_490", "description": "MTD software[1] line includes 'MS-DIAL' and version '4.90'"},
+    {"name": "ms_run_location_template", "description": "MTD ms_run[1]-location starts with 'file:///riken/' and ends with '.mzML'"}
+  ]
+}
