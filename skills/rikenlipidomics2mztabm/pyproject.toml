@@ -1,7 +1,7 @@
 [project]
-name = "mztabm-creator-skill"
+name = "rikenlipidomics2mztabm-skill"
 version = "0.0.2"
-description = "Environment for the mztabm-creator skill"
+description = "Environment for the rikenlipidomics2mztabm skill"
 requires-python = ">=3.10"
 dependencies = [
     "pymztabm",

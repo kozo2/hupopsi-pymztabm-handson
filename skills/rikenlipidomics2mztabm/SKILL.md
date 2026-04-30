@@ -1,9 +1,9 @@
 ---
-name: mztabm-creator
+name: rikenlipidomics2mztabm
 description: Convert a pair of RIKEN-LIPIDOMICS-style MSDIAL alignment TSV files (a *_forMTD.tsv per-sample metadata table plus a *_forSMLSMF.tsv alignment export, layout used in https://github.com/kozo2/hupopsi-pymztabm-handson/tree/main/RIKEN_LIPIDOMICS) into a valid mzTab-M 2.0.0-M file using the `pymztab-m` Python package, where success means the in-memory `MzTabM.validate(...)` reports zero ERROR-level messages. Use this skill whenever the user has MSDIAL alignment TSVs (or anything called "RIKEN lipidomics", "forMTD/forSMLSMF", "MS-DIAL export", "alignment_results.tsv") and wants to convert, export, share, archive, or upload it as mzTab-M / "the standard metabolomics format" / "mzTab" — even if they don't say "mzTab-M" explicitly. Also trigger when the user wants to check that an existing mzTab-M file passes the pymzTab-m validator, or asks for help wiring metadata + SML/SMF/SME sections together.
 ---
 
-# mztabm-creator
+# rikenlipidomics2mztabm
 
 Convert the two-TSV RIKEN_LIPIDOMICS export from MSDIAL alignment into an mzTab-M 2.0.0-M file that passes the `pymztab-m` package's in-memory validator with **zero ERROR-level messages**. WARNING-level messages (e.g. unreferenced `study_variable`, recommended-but-missing `best_id_confidence_value`) are tolerated — only ERRORs count as failure.
 
@@ -37,7 +37,7 @@ A bundled converter script does the heavy lifting — call it once per study (on
 The skill ships with a `uv`-managed virtualenv under `<skill-dir>/.venv` whose only runtime dependency is `pymztab-m` (installed editable from a local checkout of the package's `development` branch). From the skill directory:
 
 ```bash
-cd /Users/knishida/skills/mztabm-creator
+cd /Users/knishida/skills/rikenlipidomics2mztabm
 /Users/knishida/.local/bin/uv sync   # idempotent; no-op when nothing changed
 ```
 
@@ -66,7 +66,7 @@ Save what you collected to a JSON file. See `scripts/example_metadata.json` for 
 ### Step 3 — Run the converter
 
 ```bash
-cd /Users/knishida/skills/mztabm-creator
+cd /Users/knishida/skills/rikenlipidomics2mztabm
 /Users/knishida/.local/bin/uv run python scripts/tsv_to_mztabm.py \
   <FOR_MTD.tsv> <FOR_SMLSMF.tsv> <OUTPUT.mztab> \
   [--metadata META.json] \
