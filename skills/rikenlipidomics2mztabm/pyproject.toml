@@ -8,4 +8,4 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-pymztabm = { path = "/Users/knishida/Documents/GitHub/pymzTab-m/.claude/worktrees/infallible-cannon-952bb4", editable = true }
+pymztabm = { git = "https://github.com/lifs-tools/pymzTab-m", branch = "development_2026_04_26" }

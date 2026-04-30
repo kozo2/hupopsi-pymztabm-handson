@@ -212,29 +212,12 @@ wheels = [
 [[package]]
 name = "pymztabm"
 version = "0.1.0"
-source = { editable = "/Users/knishida/Documents/GitHub/pymzTab-m/.claude/worktrees/infallible-cannon-952bb4" }
+source = { git = "https://github.com/lifs-tools/pymzTab-m?branch=development_2026_04_26#0bdd44320184ee3842560f5ee91c1af91fa3ab44" }
 dependencies = [
     { name = "email-validator" },
     { name = "jsonschema" },
     { name = "pydantic" },
     { name = "pyyaml" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "email-validator", specifier = ">=2.3.0" },
-    { name = "jsonschema", specifier = ">=4.26.0" },
-    { name = "pydantic", specifier = ">=2.12.4" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "mkdocs-material", specifier = ">=9.7.0" },
-    { name = "pre-commit", specifier = ">=3.10.1" },
-    { name = "pytest", specifier = ">=9.0.3" },
-    { name = "ruff", specifier = ">=0.14.4" },
-    { name = "uv-build", specifier = ">=0.9.8" },
 ]
 
 [[package]]
@@ -324,7 +307,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pymztabm", editable = "/Users/knishida/Documents/GitHub/pymzTab-m/.claude/worktrees/infallible-cannon-952bb4" }]
+requires-dist = [{ name = "pymztabm", git = "https://github.com/lifs-tools/pymzTab-m?branch=development_2026_04_26" }]
 
 [[package]]
 name = "rpds-py"
