@@ -59,7 +59,7 @@ from mztab_m_io.model.common import (
     PublicationItem,
     Sample,
     Software,
-    SpectraReference,
+    SpectraRef,
     StudyVariable,
 )
 from mztab_m_io.model.mztabm import MzTabM
@@ -401,7 +401,7 @@ def build_mztabm(
                 id=assay_id,
                 name=run_name,
                 sample_ref=assay_id,
-                ms_run_refs=[assay_id],
+                ms_run_ref=[assay_id],
             )
         )
         name_to_assay[run_name] = assay_id
@@ -638,7 +638,7 @@ def build_mztabm(
         )
         smf_list.append(smf)
 
-        # spectra_references must point to a real ms_run id. If MSDIAL named
+        # spectra_ref must point to a real ms_run id. If MSDIAL named
         # the spectrum-reference file, try to match it to one of the ms_run
         # names; otherwise default to ms_run[1].
         sref_run_id = 1
@@ -649,7 +649,7 @@ def build_mztabm(
                     sref_run_id = run_id
                     break
             sref_text = f"file={spec_file}"
-        spectra_ref = SpectraReference(ms_run_ref=sref_run_id, reference=sref_text)
+        spectra_ref = SpectraRef(ms_run=sref_run_id, reference=sref_text)
 
         # database_identifier on SME is a single string, not a list.
         sme = SmallMoleculeEvidence(
@@ -663,7 +663,7 @@ def build_mztabm(
             exp_mass_to_charge=mz,
             charge=1,
             theoretical_mass_to_charge=ref_mz if ref_mz is not None else mz,
-            spectra_references=[spectra_ref],
+            spectra_ref=[spectra_ref],
             identification_method=Parameter(
                 cv_label="MS",
                 cv_accession="MS:1001582",
